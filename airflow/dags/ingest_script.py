@@ -3,21 +3,21 @@ import pyarrow.csv as pv
 import pandas as pd
 from sqlalchemy import create_engine
 
-def ingest_callable(user, password, host, port, db, table_name, csv_url):
-    # Determine file name
-    csv_name = "output.csv.gz" if csv_url.endswith('.csv.gz') else "output.csv"
-
-    # Download the file
-    os.system(f"wget {csv_url} -O {csv_name}")
+def ingest_callable(user, password, host, port, db, table_name, csv_file):
 
     # Create connection to the PostgreSQL database
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
-    
-    # Read CSV using PyArrow
-    table = pv.read_csv(csv_name)
-    df = table.to_pandas()
+    print("Connection to PostgreSQL database successful.")
 
+    print(f"Ingesting data from {csv_file} into {table_name}.")
+    # Read CSV using PyArrow
+    df=pd.read_csv(csv_file,engine='pyarrow')
+
+    print(f"Data successfully read from {csv_file}.")
     # Insert the data into PostgreSQL
-    df.to_sql(name=table_name, con=engine, if_exists='append', index=False)  # Use append instead of replace
+    try:
+        df.to_sql(name=table_name, con=engine, if_exists='append', index=False)  # Use append instead of replace
+    except Exception as e:
+        print(e)
     print(f"Data successfully ingested into {table_name}.")
 
