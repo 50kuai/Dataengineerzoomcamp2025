@@ -20,3 +20,25 @@
 [2025-02-11T01:58:58.072+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=LocalIngestionDag, task_id=wget, run_id=scheduled__2021-01-02T06:00:00+00:00, execution_date=20210102T060000, start_date=20250211T015850, end_date=20250211T015858
 [2025-02-11T01:58:58.150+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
 [2025-02-11T01:58:58.190+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-02-12T03:51:46.525+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-12T03:51:46.580+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: LocalIngestionDag.wget scheduled__2021-01-02T06:00:00+00:00 [queued]>
+[2025-02-12T03:51:46.598+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: LocalIngestionDag.wget scheduled__2021-01-02T06:00:00+00:00 [queued]>
+[2025-02-12T03:51:46.607+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-02-12T03:51:46.660+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): wget> on 2021-01-02 06:00:00+00:00
+[2025-02-12T03:51:46.686+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'LocalIngestionDag', 'wget', 'scheduled__2021-01-02T06:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmpgwt89957']
+[2025-02-12T03:51:46.696+0000] {standard_task_runner.py:105} INFO - Job 7: Subtask wget
+[2025-02-12T03:51:46.683+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=295) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-12T03:51:46.702+0000] {standard_task_runner.py:72} INFO - Started process 317 to run task
+[2025-02-12T03:51:46.905+0000] {task_command.py:467} INFO - Running <TaskInstance: LocalIngestionDag.wget scheduled__2021-01-02T06:00:00+00:00 [running]> on host ee2ea8770015
+[2025-02-12T03:51:47.526+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='LocalIngestionDag' AIRFLOW_CTX_TASK_ID='wget' AIRFLOW_CTX_EXECUTION_DATE='2021-01-02T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-01-02T06:00:00+00:00'
+[2025-02-12T03:51:47.527+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-12T03:51:47.536+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-02-12T03:51:47.538+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'curl -sSL https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2019-01.csv.gz > /opt/***/yellow_tripdata_2019-01.csv.gz']
+[2025-02-12T03:51:47.550+0000] {subprocess.py:99} INFO - Output:
+[2025-02-12T03:53:02.814+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-02-12T03:53:02.967+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-02-12T03:53:02.979+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=LocalIngestionDag, task_id=wget, run_id=scheduled__2021-01-02T06:00:00+00:00, execution_date=20210102T060000, start_date=20250212T035146, end_date=20250212T035302
+[2025-02-12T03:53:03.300+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-12T03:53:03.609+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

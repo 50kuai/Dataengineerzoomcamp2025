@@ -1,0 +1,17 @@
+[2025-02-12T03:53:02.292+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-12T03:53:02.354+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: LocalIngestionDag.ingest manual__2025-02-12T03:51:44.234699+00:00 [queued]>
+[2025-02-12T03:53:02.372+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: LocalIngestionDag.ingest manual__2025-02-12T03:51:44.234699+00:00 [queued]>
+[2025-02-12T03:53:02.374+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-02-12T03:53:02.394+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): ingest> on 2025-02-12 03:51:44.234699+00:00
+[2025-02-12T03:53:02.397+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=535) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-12T03:53:02.399+0000] {standard_task_runner.py:72} INFO - Started process 541 to run task
+[2025-02-12T03:53:02.400+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'LocalIngestionDag', 'ingest', 'manual__2025-02-12T03:51:44.234699+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmpdlevxxi2']
+[2025-02-12T03:53:02.404+0000] {standard_task_runner.py:105} INFO - Job 25: Subtask ingest
+[2025-02-12T03:53:02.516+0000] {task_command.py:467} INFO - Running <TaskInstance: LocalIngestionDag.ingest manual__2025-02-12T03:51:44.234699+00:00 [running]> on host ee2ea8770015
+[2025-02-12T03:53:03.230+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='LocalIngestionDag' AIRFLOW_CTX_TASK_ID='ingest' AIRFLOW_CTX_EXECUTION_DATE='2025-02-12T03:51:44.234699+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-12T03:51:44.234699+00:00'
+[2025-02-12T03:53:03.236+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-12T03:53:07.655+0000] {local_task_job_runner.py:266} INFO - Task exited with return code -9. For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed
+[2025-02-12T03:53:07.675+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-12T03:53:07.677+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
