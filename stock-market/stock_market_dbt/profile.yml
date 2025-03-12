@@ -1,0 +1,11 @@
+bigquery:
+  outputs:
+    dev:
+      type: bigquery
+      method: "{{ env_var('DBT_BIGQUERY_AUTH_METHOD') }}"
+      project: "{{ env_var('DBT_BIGQUERY_PROJECT') }}"
+      dataset: "{{ env_var('DBT_BIGQUERY_TARGET_DATASET') }}"
+      threads: 4
+      keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
+      location: "{{ env_var('DBT_BIGQUERY_DATASET_LOCATION') }}" 
+      schema: dbt_stock_project

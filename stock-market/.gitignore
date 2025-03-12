@@ -1,0 +1,7 @@
+echo ".env" >> .gitignore
+.env
+../airflow/logs/
+../logs/
+../.DS_Store
+google-cloud-sdk/
+

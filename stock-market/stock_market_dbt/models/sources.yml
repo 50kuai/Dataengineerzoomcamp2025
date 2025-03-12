@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: stock_dataset
+    database: quantum-gearbox-451820-r4
+    schema: stock_dataset
+    tables:
+      - name: transactions
+        description: "This table contains the transaction data"
+      - name: stock_data
+        description: "This table contains the stock market data"

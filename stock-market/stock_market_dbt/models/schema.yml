@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: portfolio_holdings
+    description: |
+      This model tracks the total number of shares held for each stock ticker, considering both 
+      `BUY` and `SELL` transactions. It also calculates the average purchase price for the `BUY` transactions.
+    columns:
+      - name: ticker
+        description: The stock ticker symbol.
+        tests:
+          - not_null
+          - unique
+      - name: total_quantity
+        description: The total quantity of shares currently held for the stock, accounting for both `BUY` and `SELL` transactions.
+        tests:
+          - not_null
+      - name: avg_buy_price
+        description: The average purchase price for the stock, calculated only for `BUY` transactions.
+
+  - name: portfolio_value
+    description: |
+      This model calculates the current market value of the portfolio, based on the latest available stock price.
+      It takes into account the total shares held, determined by the `transactions` table, and multiplies it by 
+      the most recent stock price.
+    columns:
+      - name: ticker
+        description: The stock ticker symbol.
+        tests:
+          - not_null
+      - name: total_shares
+        description: The total number of shares currently held for the stock.
+        tests:
+          - not_null
+      - name: latest_price
+        description: The most recent closing price of the stock.
+        tests:
+          - not_null
+      - name: market_value
+        description: The market value of the stock, calculated as `total_shares * latest_price`.
+
+  - name: portfolio_profit_loss
+    description: |
+      This model calculates both unrealized and realized profit/loss for each stock in the portfolio. 
+      Unrealized profit/loss is calculated based on the current market price, while realized profit/loss 
+      is based on the proceeds from `SELL` transactions and the initial purchase price of the stock.
+    columns:
+      - name: ticker
+        description: The stock ticker symbol.
+        tests:
+          - not_null
+      - name: current_holdings
+        description: The total number of shares currently held for each stock, accounting for both `BUY` and `SELL` transactions.
+        tests:
+          - not_null
+      - name: avg_buy_price
+        description: The average purchase price of the stock.
+        tests:
+          - not_null
+      - name: latest_price
+        description: The latest closing price for the stock.
+        tests:
+          - not_null
+      - name: unrealized_profit_loss
+        description: The unrealized profit or loss based on the current market value and the average purchase price.
+      - name: realized_profit_loss
+        description: The realized profit or loss from `SELL` transactions, calculated as the difference between 
+          the proceeds from `SELL` transactions and the initial purchase price.
+
