@@ -1,6 +1,6 @@
 # Project: Investor Portfolio Tracker
 
-This repository contains the code and configuration for an end-to-end data engineering project developed during the Data Engineering Zoomcamp 2025. The project constructs a portfolio tracker that enables investors to monitor portfolio value, track stock transactions, and derive financial insights from both real-time and historical data.
+This repository contains the code and configuration for an end-to-end data engineering project developed during the Data Engineering Zoomcamp 2025. The project constructs a portfolio tracker that enables investors to monitor portfolio value, track stock transactions, and derive financial insights from historical data.
 
 ![image](https://github.com/user-attachments/assets/d4105367-0c5d-4c95-990c-a5c6ce1f7e21)
 
