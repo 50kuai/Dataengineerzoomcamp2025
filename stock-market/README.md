@@ -2,21 +2,12 @@
 
 This repository contains the code and configuration for an end-to-end data engineering project developed during the Data Engineering Zoomcamp 2025. The project constructs a portfolio tracker that enables investors to monitor portfolio value, track stock transactions, and derive financial insights from both real-time and historical data.
 
-![image](https://github.com/user-attachments/assets/f873d220-fcf3-4a21-950e-19df39485e7c)
+![image](https://github.com/user-attachments/assets/d4105367-0c5d-4c95-990c-a5c6ce1f7e21)
 
 ## Problem Statement
 
-The objective is to create a robust system that answers critical investor questions, including:
+Investors need a quick daily snapshot of their prior-day portfolio performance. This project builds an automated pipeline that delivers yesterday's share holdings, total portfolio valuation, and stock prices, enabling faster and more informed investment decisions.
 
-* Current share holdings for current portfolio.
-* Current total portfolio valuation.
-* Holdings price per stock.
-<img width="901" alt="Screenshot 2025-03-11 at 9 47 38 PM" src="https://github.com/user-attachments/assets/ab5d8919-3182-4606-9ea0-a7658c6b8496" />
-
-
-
-
-This is achieved by transforming raw transactional data into structured, actionable information using dbt models.
 
 ## Technologies Employed
 
@@ -28,6 +19,10 @@ This project utilizes a modern data stack, incorporating the following technolog
 * **Apache Airflow:** Workflow orchestration for data ingestion and processing.
 * **dbt (Data Build Tool):** Data transformation and modeling.
 * **Google Data Studio:** Data visualization and reporting.
+
+## Architecture
+![image](https://github.com/user-attachments/assets/27040f0c-d912-483f-95d5-a0d079b70795)
+
 
 ## Project Workflow
 
@@ -127,6 +122,7 @@ This project utilizes a modern data stack, incorporating the following technolog
     * Open Google Data Studio.
     * Connect BigQuery as a data source and select the `stock_dataset`.
     * Develop visualizations to monitor portfolio performance.
+<img width="901" alt="Screenshot 2025-03-11 at 9 47 38 PM" src="https://github.com/user-attachments/assets/ab5d8919-3182-4606-9ea0-a7658c6b8496" />
 
 ## Project Outcomes
 
